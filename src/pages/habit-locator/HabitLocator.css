@@ -1,0 +1,47 @@
+.habit-locator-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.habit-locator-title {
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.page-description {
+  color: #4b5563;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.map-section {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .habit-locator-page {
+    padding: 0.75rem;
+  }
+
+  .habit-locator-title {
+    font-size: 1.75rem;
+  }
+
+  .map-section {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+} 
