@@ -12,6 +12,11 @@ export function Features() {
             Habit Locator
           </Link>
         </li>
+        <li>
+          <Link to="/habit-prioritizer" className="feature-link">
+            Habit Prioritizer
+          </Link>
+        </li>
       </ul>
     </div>
   )

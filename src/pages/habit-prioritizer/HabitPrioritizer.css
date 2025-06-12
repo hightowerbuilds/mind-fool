@@ -1,0 +1,249 @@
+:root {
+  --neon-green: #00ff00;
+  --surf-green: #00b36b;
+  --neon-blue: #0066ff;
+  --neon-red: #ff0000;
+  --dark-bg: #0a0a0a;
+  --darker-bg: #050505;
+  --border-color: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+}
+
+.habit-prioritizer-page {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+.habit-prioritizer-page .title {
+  font-size: clamp(1.25rem, 4vw, 1.5rem);
+  margin-bottom: 1.25rem;
+  color: var(--surf-green);
+}
+
+.habit-form {
+  background: var(--darker-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--surf-green);
+}
+
+.form-group input[type="text"],
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+}
+
+.form-group input[type="text"]::placeholder {
+  color: var(--text-secondary);
+}
+
+.form-group input[type="range"] {
+  width: 100%;
+  margin: 0.5rem 0;
+  -webkit-appearance: none;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--neon-red) 0%, var(--neon-blue) 100%);
+  transition: background 0.1s ease;
+}
+
+/* Webkit (Chrome, Safari) styles */
+.form-group input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon-blue);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease;
+}
+
+.form-group input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Firefox styles */
+.form-group input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon-blue);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease;
+}
+
+.form-group input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+.form-group input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 4px;
+  background: transparent;
+}
+
+.priority-value {
+  font-weight: 500;
+  color: var(--text-primary);
+  text-align: center;
+  display: block;
+}
+
+.submit-button {
+  background: var(--surf-green);
+  color: var(--text-primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background: var(--surf-green);
+  opacity: 0.8;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+.habits-list {
+  margin-top: 2rem;
+  background: var(--darker-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.habits-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--surf-green);
+  text-align: center;
+}
+
+.no-habits {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.habit-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--darker-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.habit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.habit-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.habit-priority {
+  font-size: 0.9rem;
+  color: var(--neon-blue);
+}
+
+.habit-intensity {
+  font-size: 0.9rem;
+  color: var(--surf-green);
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  border-radius: 4px;
+  transition: color 0.2s ease;
+}
+
+.delete-button:hover {
+  color: var(--surf-green);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .habit-prioritizer-page {
+    padding: 0.5rem;
+  }
+
+  .habit-form {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .submit-button {
+    padding: 0.875rem 1.5rem;
+  }
+
+  .habit-item {
+    padding: 0.875rem;
+  }
+}
+
+.form-group input.error {
+  border-color: var(--neon-red);
+  box-shadow: 0 0 5px var(--neon-red);
+}
+
+.error-message {
+  color: var(--neon-red);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+} 

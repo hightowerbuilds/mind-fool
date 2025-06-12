@@ -3,6 +3,7 @@ import { Root } from './layout/Root'
 import { Home } from './pages/home/Home'
 import { Features } from './pages/features/Features'
 import { HabitLocator } from './pages/habit-locator/HabitLocator'
+import { HabitPrioritizer } from './pages/habit-prioritizer/HabitPrioritizer'
 
 const rootRoute = createRootRoute({
   component: Root,
@@ -26,6 +27,17 @@ const habitLocatorRoute = createRoute({
   component: HabitLocator,
 })
 
-const routeTree = rootRoute.addChildren([indexRoute, featuresRoute, habitLocatorRoute])
+const habitPrioritizerRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/habit-prioritizer',
+  component: HabitPrioritizer,
+})
+
+const routeTree = rootRoute.addChildren([
+  indexRoute, 
+  featuresRoute, 
+  habitLocatorRoute,
+  habitPrioritizerRoute
+])
 
 export const router = createRouter({ routeTree }) 
