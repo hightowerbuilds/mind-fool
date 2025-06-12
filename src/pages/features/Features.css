@@ -5,12 +5,14 @@
   align-items: center;
   padding: 1rem;
   text-align: center;
+  background: var(--dark-bg);
+  min-height: 100vh;
 }
 
 .features-title {
   font-size: clamp(2rem, 8vw, 3rem);
   font-weight: 500;
-  color: #000;
+  color: var(--surf-green);
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,13 +34,18 @@
 }
 
 .feature-link {
-  color: #000;
+  color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  background: var(--darker-bg);
+  border: 1px solid var(--border-color);
 }
 
 .feature-link:hover {
-  opacity: 0.7;
-  text-decoration: underline;
+  color: var(--surf-green);
+  border-color: var(--surf-green);
 } 
