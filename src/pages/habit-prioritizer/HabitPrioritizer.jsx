@@ -53,11 +53,20 @@ export function HabitPrioritizer() {
     setFormData({ name: '', priority: 5 });
     setError('');
 
-    // Trigger vibration if supported (100ms duration)
-    if ('vibrate' in navigator) {
-      navigator.vibrate(100);
+    // Enhanced vibration implementation
+    try {
+      // Check if vibration is supported
+      if (typeof navigator.vibrate === 'function') {
+        // Try to vibrate with a pattern (100ms on, 50ms off, 100ms on)
+        const success = navigator.vibrate([100, 50, 100]);
+        console.log('Vibration supported:', success);
+      } else {
+        console.log('Vibration not supported on this device');
+      }
+    } catch (error) {
+      console.log('Vibration error:', error);
     }
-  }
+  };
 
   const handleDelete = (id) => {
     setHabits(prev => prev.filter(habit => habit.id !== id))
