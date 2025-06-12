@@ -25,13 +25,12 @@ export function HabitPrioritizer() {
   }, [formData.priority])
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
-    const newValue = name === 'priority' ? parseInt(value) : value
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: newValue
-    }))
-  }
+      [name]: value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,14 +69,19 @@ export function HabitPrioritizer() {
       
       <form onSubmit={handleSubmit} className="habit-form">
         <div className="form-group">
-          <label htmlFor="habitName">Habit Name</label>
+          <label htmlFor="name">Habit Name</label>
           <input
             type="text"
-            id="habitName"
+            id="name"
+            name="name"
             value={formData.name}
             onChange={handleInputChange}
             placeholder="Enter a new habit"
             className={error ? 'error' : ''}
+            autoComplete="off"
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck="false"
           />
           {error && <span className="error-message">{error}</span>}
         </div>
