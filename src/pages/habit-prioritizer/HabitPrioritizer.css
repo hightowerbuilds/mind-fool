@@ -15,8 +15,10 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
-  background: var(--dark-bg);
+  background: transparent;
   color: var(--text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 .habit-prioritizer-page .title {

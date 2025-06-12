@@ -5,8 +5,10 @@
   align-items: center;
   padding: 1rem;
   text-align: center;
-  background: var(--dark-bg);
+  background: transparent;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 .features-title {
