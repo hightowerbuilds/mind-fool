@@ -1,0 +1,125 @@
+.habit-scheduler-page {
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 0.5rem;
+}
+
+.habit-scheduler-page .title {
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--surf-green);
+  text-transform: lowercase;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.month-selector label {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.month-dropdown {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  background: rgba(15, 15, 35, 0.8);
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.month-dropdown:hover {
+  border-color: var(--neon-red);
+  box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.month-dropdown:focus {
+  border-color: var(--neon-red);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.month-dropdown option {
+  background: rgba(15, 15, 35, 0.95);
+  color: var(--text-primary);
+  padding: 0.5rem;
+}
+
+.canvas-container {
+  width: 80vw;
+  height: 60vh;
+  background: rgba(15, 15, 35, 0.8);
+}
+
+.day-squares-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  max-width: 80vw;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 10;
+  position: relative;
+}
+
+.day-square {
+  width: 40px;
+  height: 40px;
+  background-color: var(--surf-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+  z-index: 10;
+  position: relative;
+}
+
+.day-square:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .canvas-container {
+    width: 95vw;
+    height: 50vh;
+  }
+  
+  .habit-scheduler-page .title {
+    font-size: 2rem;
+  }
+  
+  .day-squares-container {
+    max-width: 95vw;
+  }
+  
+  .day-square {
+    width: 35px;
+    height: 35px;
+    font-size: 10px;
+  }
+}

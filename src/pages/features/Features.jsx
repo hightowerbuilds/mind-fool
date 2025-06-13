@@ -20,6 +20,11 @@ export function Features() {
               Habit Prioritizer
             </Link>
           </li>
+          <li>
+            <Link to="/habit-scheduler" className="feature-link">
+              Habit Scheduler
+            </Link>
+          </li>
         </ul>
       </div>
     </>
