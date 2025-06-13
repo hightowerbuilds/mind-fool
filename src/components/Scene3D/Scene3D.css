@@ -1,13 +1,14 @@
 .scene-container {
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  background: #000000;
 }
 
 /* Remove the canvas styles as they might be interfering */
-.scene-container canvas {
-  display: block;
+canvas {
+  width: 100% !important;
+  height: 100% !important;
 } 
