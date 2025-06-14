@@ -143,30 +143,44 @@ function DayNumber({ day, position, isSelected, dateInfo }) {
   
   return (
     <group>
-      <Text
-        ref={textRef}
-        position={position}
-        fontSize={0.3}
-        color={isSelected ? "#000000" : "#ffffff"}
-        anchorX="center"
-        anchorY="middle"
-        font="/fonts/JetBrainsMono-Bold.ttf"
-      >
-        {day}
-      </Text>
-      {dateInfo && (
+      {!dateInfo && (  // Only show the original date number if there's no content
         <Text
-          position={[position[0], 0, position[2]]}  // Position on the ring
-          fontSize={0.15}
-          color="#ffffff"
+          ref={textRef}
+          position={position}
+          fontSize={0.3}
+          color={isSelected ? "#000000" : "#ffffff"}
           anchorX="center"
           anchorY="middle"
-          maxWidth={1.5}
-          textAlign="center"
-          renderOrder={1}  // Ensure text renders above the ring
+          font="/fonts/JetBrainsMono-Bold.ttf"
         >
-          {dateInfo}
+          {day}
         </Text>
+      )}
+      {dateInfo && (
+        <group position={[position[0], 0, position[2]]}>
+          <Text
+            position={[-0.8, 0, 0]}
+            fontSize={0.15}
+            color="#ff4444"
+            anchorX="right"
+            anchorY="middle"
+            renderOrder={1}
+          >
+            {day}
+          </Text>
+          <Text
+            position={[0, 0, 0]}
+            fontSize={0.15}
+            color="#ffffff"
+            anchorX="left"
+            anchorY="middle"
+            maxWidth={1.5}
+            textAlign="left"
+            renderOrder={1}
+          >
+            {dateInfo}
+          </Text>
+        </group>
       )}
     </group>
   )
